@@ -1,66 +1,3 @@
-//
-//// Archivo:     micubo.c
-//// Autor:       Mateo Díaz
-//// Creado:      4/25/2012
-//// Proyecto:    código fuente para hacer un cubo en OpenGL
-//// Descripción: crear una ventana OpenGL y dibujar un cubo 3D
-////                que el usuario pueda rotar con las teclas de flecha 
-//// 
-//// Controles:    Flecha izquierda: rotar a la izquierda
-////               Flecha derecha: rotar a la derecha  
-////               Flecha hacia arriba: rotar hacia arriba    
-////               Flecha hacia abajo: rotar hacia abajo    
-//
-//// ----------------------------------------------------------
-//// Librerías
-//// ----------------------------------------------------------
-//#include <stdio.h>
-//#include <stdarg.h>
-//#include <math.h>
-//#define GL_GLEXT_PROTOTYPES
-//#ifdef __APPLE__
-//#include <GLUT/glut.h>
-//#else
-//#include <GL/glut.h>
-//#endif
-//
-//// ----------------------------------------------------------
-//// Prototipos de función
-//// ----------------------------------------------------------
-//void display();
-//void specialKeys();
-//
-
-
-//
-//// ----------------------------------------------------------
-//// Función “main()”
-//// ----------------------------------------------------------
-//int main(int argc, char* argv[]) {
-//
-//	//  Inicializar los parámetros GLUT y de usuario proceso
-//	glutInit(&argc, argv);
-//
-//	//  Solicitar ventana con color real y doble buffer con Z-buffer 
-//	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-//
-//	// Crear ventana
-//	glutCreateWindow("Cubo asombroso");
-//
-//	//  Habilitar la prueba de profundidad de Z-buffer
-//	glEnable(GL_DEPTH_TEST);
-//
-//	// Funciones de retrollamada
-//	glutDisplayFunc(display);
-//	glutSpecialFunc(specialKeys);
-//
-//	//  Pasar el control de eventos a GLUT
-//	glutMainLoop();
-//
-//	//  Regresar al sistema operativo
-//	return 0;
-//
-//}
 #include <stdio.h>
 #include <stdarg.h>
 #include <iostream>
@@ -236,10 +173,7 @@ void drawCube() {
 	glEnd();
 	glutSwapBuffers();
 }
-void animacion(Point p1) {
 
-	
-}
 double rotate_y = 0;
 double rotate_x = 0;
 void display() {
@@ -271,6 +205,7 @@ void display() {
 		z = 0.0f;
 		
 			//meter aqui para cada segundo
+			//Gloria, aprendi como funciona
 			glColor3f(0.0, 1.0, 0.0);
 			glutWireTeapot(0.03);
 			glPushMatrix();
@@ -286,7 +221,7 @@ void display() {
 	}
 	
 
-	//glFlush();
+	
 	glutSwapBuffers();
 }
 
@@ -322,7 +257,7 @@ void myMouse(int button, int state, int x, int y) {
 				drawLine(p1, p2);
 				p1 = p2;
 				
-				//drawQuad(p1);
+				
 			}
 			glColor3f(0.0, 0.0, 0.0);
 
